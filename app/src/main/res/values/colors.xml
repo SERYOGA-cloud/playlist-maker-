@@ -6,6 +6,7 @@
     <color name="card_icon">#303030</color>
     <color name="screen_bg">#FFFFFFFF</color>
     <color name="text_primary">#1F1F1F</color>
+    <color name="text_primary_dark">#1A1B22</color>
     <color name="icon_tint">#303030</color>
     <color name="icon_inactive">#AEAFB4</color>
     <color name="icon_active">#1F1F1F</color>

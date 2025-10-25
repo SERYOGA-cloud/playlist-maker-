@@ -24,10 +24,8 @@
     <LinearLayout
         android:id="@+id/buttonsContainer"
         android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="@dimen/screen_padding_top"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:weightSum="3"
         app:layout_constraintTop_toBottomOf="@id/toolbar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -36,8 +34,9 @@
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/searchButton"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/first_card_top_offset"
+            android:layout_marginBottom="@dimen/card_gap_v"
             android:clickable="true"
             android:focusable="true"
             android:minHeight="@dimen/card_min_height"
@@ -48,7 +47,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
                 android:paddingStart="@dimen/card_padding_h"
@@ -64,22 +63,19 @@
                     android:tint="@color/card_icon" />
 
                 <TextView
+                    style="@style/Text.Main.CardTitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/card_icon_text_gap"
-                    android:text="@string/btn_search"
-                    android:textColor="@color/card_text"
-                    android:textSize="@dimen/card_title_size"
-                    android:textStyle="bold" />
+                    android:text="@string/btn_search" />
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
 
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/libraryButton"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_marginTop="@dimen/card_gap_v"
-            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/card_gap_v"
             android:clickable="true"
             android:focusable="true"
             android:minHeight="@dimen/card_min_height"
@@ -90,7 +86,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
                 android:paddingStart="@dimen/card_padding_h"
@@ -106,22 +102,19 @@
                     android:tint="@color/card_icon" />
 
                 <TextView
+                    style="@style/Text.Main.CardTitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/card_icon_text_gap"
-                    android:text="@string/btn_library"
-                    android:textColor="@color/card_text"
-                    android:textSize="@dimen/card_title_size"
-                    android:textStyle="bold" />
+                    android:text="@string/btn_library" />
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
 
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/settingsButton"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_marginTop="@dimen/card_gap_v"
-            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/card_gap_v"
             android:clickable="true"
             android:focusable="true"
             android:minHeight="@dimen/card_min_height"
@@ -132,7 +125,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
                 android:paddingStart="@dimen/card_padding_h"
@@ -148,13 +141,11 @@
                     android:tint="@color/card_icon" />
 
                 <TextView
+                    style="@style/Text.Main.CardTitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/card_icon_text_gap"
-                    android:text="@string/btn_settings"
-                    android:textColor="@color/card_text"
-                    android:textSize="@dimen/card_title_size"
-                    android:textStyle="bold" />
+                    android:text="@string/btn_settings" />
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
 
