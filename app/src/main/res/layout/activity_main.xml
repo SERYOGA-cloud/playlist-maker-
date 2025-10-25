@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_main"
+    android:paddingStart="@dimen/screen_padding_h"
+    android:paddingEnd="@dimen/screen_padding_h"
+    android:paddingTop="@dimen/screen_padding_top"
+    android:paddingBottom="@dimen/screen_padding_bottom">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/toolbar_height"
+        android:background="@android:color/transparent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:title="@string/app_title"
+        app:titleTextColor="@android:color/white" />
+
+    <LinearLayout
+        android:id="@+id/buttonsContainer"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/screen_padding_top"
+        android:orientation="vertical"
+        android:weightSum="3"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/searchButton"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:focusable="true"
+            android:minHeight="@dimen/card_min_height"
+            app:cardBackgroundColor="@color/card_bg"
+            app:cardCornerRadius="@dimen/card_radius"
+            app:cardElevation="0dp"
+            app:rippleColor="@color/card_ripple">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingStart="@dimen/card_padding_h"
+                android:paddingEnd="@dimen/card_padding_h"
+                android:paddingTop="@dimen/card_padding_v"
+                android:paddingBottom="@dimen/card_padding_v">
+
+                <ImageView
+                    android:layout_width="@dimen/card_icon_size"
+                    android:layout_height="@dimen/card_icon_size"
+                    android:contentDescription="@string/content_desc_search"
+                    android:src="@drawable/ic_search"
+                    android:tint="@color/card_icon" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/card_icon_text_gap"
+                    android:text="@string/btn_search"
+                    android:textColor="@color/card_text"
+                    android:textSize="@dimen/card_title_size"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/libraryButton"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/card_gap_v"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:focusable="true"
+            android:minHeight="@dimen/card_min_height"
+            app:cardBackgroundColor="@color/card_bg"
+            app:cardCornerRadius="@dimen/card_radius"
+            app:cardElevation="0dp"
+            app:rippleColor="@color/card_ripple">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingStart="@dimen/card_padding_h"
+                android:paddingEnd="@dimen/card_padding_h"
+                android:paddingTop="@dimen/card_padding_v"
+                android:paddingBottom="@dimen/card_padding_v">
+
+                <ImageView
+                    android:layout_width="@dimen/card_icon_size"
+                    android:layout_height="@dimen/card_icon_size"
+                    android:contentDescription="@string/content_desc_library"
+                    android:src="@drawable/ic_library"
+                    android:tint="@color/card_icon" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/card_icon_text_gap"
+                    android:text="@string/btn_library"
+                    android:textColor="@color/card_text"
+                    android:textSize="@dimen/card_title_size"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/settingsButton"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/card_gap_v"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:focusable="true"
+            android:minHeight="@dimen/card_min_height"
+            app:cardBackgroundColor="@color/card_bg"
+            app:cardCornerRadius="@dimen/card_radius"
+            app:cardElevation="0dp"
+            app:rippleColor="@color/card_ripple">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingStart="@dimen/card_padding_h"
+                android:paddingEnd="@dimen/card_padding_h"
+                android:paddingTop="@dimen/card_padding_v"
+                android:paddingBottom="@dimen/card_padding_v">
+
+                <ImageView
+                    android:layout_width="@dimen/card_icon_size"
+                    android:layout_height="@dimen/card_icon_size"
+                    android:contentDescription="@string/content_desc_settings"
+                    android:src="@drawable/ic_settings"
+                    android:tint="@color/card_icon" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/card_icon_text_gap"
+                    android:text="@string/btn_settings"
+                    android:textColor="@color/card_text"
+                    android:textSize="@dimen/card_title_size"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
