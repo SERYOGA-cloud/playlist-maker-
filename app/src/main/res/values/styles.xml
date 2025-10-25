@@ -37,6 +37,11 @@
         <item name="android:focusable">true</item>
     </style>
 
+    <style name="Text.Main.CardTitle" parent="TextAppearance.Material3.TitleMedium">
+        <item name="android:textSize">@dimen/card_title_size</item>
+        <item name="android:textColor">@color/text_primary_dark</item>
+    </style>
+
     <style name="SettingsRow">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">@dimen/settings_row_height</item>
