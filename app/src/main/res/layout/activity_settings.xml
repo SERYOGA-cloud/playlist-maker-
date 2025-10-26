@@ -1,89 +1,120 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/screen_bg">
+    android:background="@color/screen_background"
+    android:orientation="vertical">
 
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/toolbar"
-        style="@style/Widget.App.Toolbar"
         android:layout_width="match_parent"
         android:layout_height="@dimen/toolbar_height"
-        android:background="@color/screen_bg"
-        android:paddingStart="@dimen/screen_padding"
-        android:paddingEnd="@dimen/screen_padding"
-        android:navigationIcon="@drawable/ic_arrow_back_24"
-        app:title="@string/settings_title"/>
+        android:paddingStart="@dimen/screen_padding_h"
+        android:paddingEnd="@dimen/screen_padding_h"
+        android:background="@android:color/transparent"
+        app:navigationIcon="@drawable/ic_arrow_back_24"
+        app:navigationIconTint="@color/text_primary_dark"
+        app:title="@string/settings_title"
+        app:titleTextColor="@color/text_primary_dark" />
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:paddingTop="16dp">
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true"
+        android:paddingStart="@dimen/settings_content_padding_horizontal"
+        android:paddingEnd="@dimen/settings_content_padding_horizontal"
+        android:paddingTop="@dimen/settings_content_padding_top"
+        android:paddingBottom="@dimen/screen_padding_bottom">
 
         <LinearLayout
-            android:id="@+id/rowTheme"
-            style="@style/SettingsRow">
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-            <TextView
-                style="@style/SettingsRowText"
-                android:text="@string/settings_dark_theme"/>
+            <LinearLayout
+                android:id="@+id/themeRow"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:paddingTop="@dimen/settings_item_padding_vertical"
+                android:paddingBottom="@dimen/settings_item_padding_vertical">
 
-            <com.google.android.material.switchmaterial.SwitchMaterial
-                android:id="@+id/switchTheme"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                <ImageView
+                    android:layout_width="@dimen/settings_item_icon_size"
+                    android:layout_height="@dimen/settings_item_icon_size"
+                    android:contentDescription="@string/content_desc_dark_theme"
+                    android:src="@drawable/ic_theme"
+                    android:tint="@color/icon_tint" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/settings_item_icon_padding"
+                    android:layout_weight="1"
+                    android:text="@string/settings_dark_theme"
+                    android:textColor="@color/text_primary_dark"
+                    android:textSize="@dimen/main_button_text_size" />
+
+                <com.google.android.material.materialswitch.MaterialSwitch
+                    android:id="@+id/switchTheme"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/settings_switch_margin_start" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/settings_item_spacing_vertical"
+                android:background="@color/settings_divider" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonShare"
+                style="@style/Widget.PlaylistMaker.SettingsButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/settings_item_spacing_vertical"
+                android:gravity="start|center_vertical"
+                android:paddingStart="@dimen/main_button_content_padding"
+                android:paddingEnd="@dimen/main_button_content_padding"
+                android:paddingTop="@dimen/settings_item_padding_vertical"
+                android:paddingBottom="@dimen/settings_item_padding_vertical"
+                app:icon="@drawable/ic_share_24"
+                app:iconSize="@dimen/settings_item_icon_size"
+                android:text="@string/settings_share" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonSupport"
+                style="@style/Widget.PlaylistMaker.SettingsButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/settings_item_spacing_vertical"
+                android:gravity="start|center_vertical"
+                android:paddingStart="@dimen/main_button_content_padding"
+                android:paddingEnd="@dimen/main_button_content_padding"
+                android:paddingTop="@dimen/settings_item_padding_vertical"
+                android:paddingBottom="@dimen/settings_item_padding_vertical"
+                app:icon="@drawable/ic_email_24"
+                app:iconSize="@dimen/settings_item_icon_size"
+                android:text="@string/settings_support" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonTerms"
+                style="@style/Widget.PlaylistMaker.SettingsButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/settings_item_spacing_vertical"
+                android:gravity="start|center_vertical"
+                android:paddingStart="@dimen/main_button_content_padding"
+                android:paddingEnd="@dimen/main_button_content_padding"
+                android:paddingTop="@dimen/settings_item_padding_vertical"
+                android:paddingBottom="@dimen/settings_item_padding_vertical"
+                app:icon="@drawable/ic_terms"
+                app:iconSize="@dimen/settings_item_icon_size"
+                android:text="@string/settings_terms" />
         </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/rowShare"
-            style="@style/SettingsRow">
-
-            <TextView
-                style="@style/SettingsRowText"
-                android:text="@string/settings_share"/>
-
-            <ImageView
-                android:id="@+id/iconShare"
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:src="@drawable/ic_share"
-                android:tint="@color/icon_inactive"/>
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/rowSupport"
-            style="@style/SettingsRow">
-
-            <TextView
-                style="@style/SettingsRowText"
-                android:text="@string/settings_support"/>
-
-            <ImageView
-                android:id="@+id/iconSupport"
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:src="@drawable/ic_support"
-                android:tint="@color/icon_inactive"/>
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/rowTerms"
-            style="@style/SettingsRow">
-
-            <TextView
-                style="@style/SettingsRowText"
-                android:text="@string/settings_terms"/>
-
-            <ImageView
-                android:id="@+id/iconTerms"
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:src="@drawable/ic_chevron_right"
-                android:tint="@color/icon_inactive"/>
-        </LinearLayout>
-
-    </LinearLayout>
+    </ScrollView>
 </LinearLayout>

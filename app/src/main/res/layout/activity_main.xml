@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg_main"
+    android:background="@color/screen_background"
     android:paddingStart="@dimen/screen_padding_h"
     android:paddingEnd="@dimen/screen_padding_h"
     android:paddingTop="@dimen/screen_padding_top"
@@ -15,149 +15,69 @@
         android:layout_width="0dp"
         android:layout_height="@dimen/toolbar_height"
         android:background="@android:color/transparent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:title="@string/app_title"
-        app:titleTextColor="@android:color/white" />
+        app:titleTextColor="@color/text_primary_dark" />
 
     <LinearLayout
         android:id="@+id/buttonsContainer"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="@dimen/screen_padding_top"
+        android:layout_marginTop="@dimen/main_buttons_top_offset"
         android:orientation="vertical"
         android:weightSum="3"
-        app:layout_constraintTop_toBottomOf="@id/toolbar"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintTop_toBottomOf="@id/toolbar">
 
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/searchButton"
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonSearch"
+            style="@style/Widget.PlaylistMaker.MainButton"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:clickable="true"
-            android:focusable="true"
-            android:minHeight="@dimen/card_min_height"
-            app:cardBackgroundColor="@color/card_bg"
-            app:cardCornerRadius="@dimen/card_radius"
-            app:cardElevation="0dp"
-            app:rippleColor="@color/card_ripple">
+            android:layout_marginBottom="@dimen/main_button_spacing_vertical"
+            android:gravity="start|center_vertical"
+            android:paddingStart="@dimen/main_button_content_padding"
+            android:paddingEnd="@dimen/main_button_content_padding"
+            android:paddingTop="@dimen/main_button_content_padding"
+            android:paddingBottom="@dimen/main_button_content_padding"
+            app:icon="@drawable/ic_search_24"
+            app:iconSize="@dimen/main_button_icon_size"
+            android:text="@string/btn_search" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center_vertical"
-                android:orientation="horizontal"
-                android:paddingStart="@dimen/card_padding_h"
-                android:paddingEnd="@dimen/card_padding_h"
-                android:paddingTop="@dimen/card_padding_v"
-                android:paddingBottom="@dimen/card_padding_v">
-
-                <ImageView
-                    android:layout_width="@dimen/card_icon_size"
-                    android:layout_height="@dimen/card_icon_size"
-                    android:contentDescription="@string/content_desc_search"
-                    android:src="@drawable/ic_search"
-                    android:tint="@color/card_icon" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/card_icon_text_gap"
-                    android:text="@string/btn_search"
-                    android:textColor="@color/card_text"
-                    android:textSize="@dimen/card_title_size"
-                    android:textStyle="bold" />
-            </LinearLayout>
-        </com.google.android.material.card.MaterialCardView>
-
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/libraryButton"
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonLibrary"
+            style="@style/Widget.PlaylistMaker.MainButton"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_marginTop="@dimen/card_gap_v"
             android:layout_weight="1"
-            android:clickable="true"
-            android:focusable="true"
-            android:minHeight="@dimen/card_min_height"
-            app:cardBackgroundColor="@color/card_bg"
-            app:cardCornerRadius="@dimen/card_radius"
-            app:cardElevation="0dp"
-            app:rippleColor="@color/card_ripple">
+            android:layout_marginBottom="@dimen/main_button_spacing_vertical"
+            android:gravity="start|center_vertical"
+            android:paddingStart="@dimen/main_button_content_padding"
+            android:paddingEnd="@dimen/main_button_content_padding"
+            android:paddingTop="@dimen/main_button_content_padding"
+            android:paddingBottom="@dimen/main_button_content_padding"
+            app:icon="@drawable/ic_library_24"
+            app:iconSize="@dimen/main_button_icon_size"
+            android:text="@string/btn_library" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center_vertical"
-                android:orientation="horizontal"
-                android:paddingStart="@dimen/card_padding_h"
-                android:paddingEnd="@dimen/card_padding_h"
-                android:paddingTop="@dimen/card_padding_v"
-                android:paddingBottom="@dimen/card_padding_v">
-
-                <ImageView
-                    android:layout_width="@dimen/card_icon_size"
-                    android:layout_height="@dimen/card_icon_size"
-                    android:contentDescription="@string/content_desc_library"
-                    android:src="@drawable/ic_library"
-                    android:tint="@color/card_icon" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/card_icon_text_gap"
-                    android:text="@string/btn_library"
-                    android:textColor="@color/card_text"
-                    android:textSize="@dimen/card_title_size"
-                    android:textStyle="bold" />
-            </LinearLayout>
-        </com.google.android.material.card.MaterialCardView>
-
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/settingsButton"
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonSettings"
+            style="@style/Widget.PlaylistMaker.MainButton"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_marginTop="@dimen/card_gap_v"
             android:layout_weight="1"
-            android:clickable="true"
-            android:focusable="true"
-            android:minHeight="@dimen/card_min_height"
-            app:cardBackgroundColor="@color/card_bg"
-            app:cardCornerRadius="@dimen/card_radius"
-            app:cardElevation="0dp"
-            app:rippleColor="@color/card_ripple">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center_vertical"
-                android:orientation="horizontal"
-                android:paddingStart="@dimen/card_padding_h"
-                android:paddingEnd="@dimen/card_padding_h"
-                android:paddingTop="@dimen/card_padding_v"
-                android:paddingBottom="@dimen/card_padding_v">
-
-                <ImageView
-                    android:layout_width="@dimen/card_icon_size"
-                    android:layout_height="@dimen/card_icon_size"
-                    android:contentDescription="@string/content_desc_settings"
-                    android:src="@drawable/ic_settings"
-                    android:tint="@color/card_icon" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/card_icon_text_gap"
-                    android:text="@string/btn_settings"
-                    android:textColor="@color/card_text"
-                    android:textSize="@dimen/card_title_size"
-                    android:textStyle="bold" />
-            </LinearLayout>
-        </com.google.android.material.card.MaterialCardView>
-
+            android:gravity="start|center_vertical"
+            android:paddingStart="@dimen/main_button_content_padding"
+            android:paddingEnd="@dimen/main_button_content_padding"
+            android:paddingTop="@dimen/main_button_content_padding"
+            android:paddingBottom="@dimen/main_button_content_padding"
+            app:icon="@drawable/ic_settings_24"
+            app:iconSize="@dimen/main_button_icon_size"
+            android:text="@string/btn_settings" />
     </LinearLayout>
-
 </androidx.constraintlayout.widget.ConstraintLayout>
