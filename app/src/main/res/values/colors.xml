@@ -1,23 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
+    <!-- Brand / theme -->
     <color name="brand_blue">#3772E7</color>
-    <color name="card_bg">#FFFFFFFF</color>
-    <color name="card_text">#1F1F1F</color>
-    <color name="card_icon">#303030</color>
+    <color name="colorPrimary">@color/brand_blue</color>
+    <color name="colorPrimaryVariant">#3354C8</color>
+    <color name="colorOnPrimary">#FFFFFFFF</color>
+
+    <!-- Screens / surfaces -->
     <color name="screen_bg">#FFFFFFFF</color>
-    <color name="text_primary">#1F1F1F</color>
-    <color name="text_primary_dark">#1A1B22</color>
-    <color name="icon_tint">#303030</color>
-    <color name="icon_inactive">#AEAFB4</color>
-    <color name="icon_active">#1F1F1F</color>
-    <color name="card_ripple">#1F000000</color>
-    <color name="divider">#14000000</color>
     <color name="screen_background">#F4F5F9</color>
+    <color name="surface">#FFFFFFFF</color>
+    <color name="divider">#14000000</color>
+
+    <!-- Cards (главные кнопки) -->
+    <color name="card_bg">#FFFFFFFF</color>
+    <color name="card_text">#1A1B22</color>
+    <color name="card_icon">#1A1B22</color>
+    <color name="card_ripple">#1F000000</color>
+
+    <!-- Text / icons -->
+    <color name="text_primary">#1A1B22</color>
+    <color name="text_primary_dark">#1A1B22</color>
+    <color name="icon_tint">#1A1B22</color>
+    <color name="icon_inactive">#AEAFB4</color>
+    <color name="icon_active">#1A1B22</color>
+
+    <!-- Toolbar / header -->
     <color name="toolbar_title">#FFFFFFFF</color>
+
+    <!-- Settings -->
     <color name="settings_divider">#FFE0E0E0</color>
-    <color name="logo_background">#3F6CD6</color>
-    <color name="main_background_start">#3F6CD6</color>
-    <color name="main_background_end">#3354C8</color>
     <color name="settings_icon_background">#E8EDFF</color>
     <color name="settings_icon_foreground">#3F6CD6</color>
+
+    <!-- Gradient (фон на главном экране) -->
+    <color name="main_background_start">#3F6CD6</color>
+    <color name="main_background_end">#3354C8</color>
+
+    <!-- Buttons -->
+    <color name="main_button_background">#FFFFFFFF</color>
+
 </resources>
+
+
