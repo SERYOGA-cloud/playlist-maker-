@@ -8,6 +8,7 @@
     <string name="content_desc_search">Перейти к разделу поиска</string>
     <string name="content_desc_library">Перейти к разделу медиатеки</string>
     <string name="content_desc_settings">Перейти к разделу настроек</string>
+    <string name="content_desc_dark_theme">Переключатель тёмной темы</string>
 
     <string name="settings_title">Настройки</string>
     <string name="settings_dark_theme">Тёмная тема</string>
