@@ -15,7 +15,6 @@
             android:label="@string/terms_title" />
         <activity
             android:name=".SettingsActivity"
-            android:theme="@style/Theme.App.NoActionBar"
             android:exported="false"
             android:label="@string/settings_title" />
         <activity
