@@ -3,21 +3,16 @@ package com.example.playlistmaker
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
-import android.view.View
-import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.content.ContextCompat
 import com.google.android.material.appbar.MaterialToolbar
-import com.google.android.material.switchmaterial.SwitchMaterial
+import com.google.android.material.button.MaterialButton
+import com.google.android.material.materialswitch.MaterialSwitch
 
 class SettingsActivity : AppCompatActivity() {
 
     private val prefs by lazy { getSharedPreferences(PREFS_NAME, MODE_PRIVATE) }
-    private var isShareActive = false
-    private var isSupportActive = false
-    private var isTermsActive = false
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_settings)
@@ -26,15 +21,13 @@ class SettingsActivity : AppCompatActivity() {
         setSupportActionBar(toolbar)
         supportActionBar?.apply {
             setDisplayHomeAsUpEnabled(true)
+            setHomeAsUpIndicator(R.drawable.ic_arrow_back_24)
             title = getString(R.string.settings_title)
         }
-        if (toolbar.navigationIcon == null) {
-            toolbar.navigationIcon = ContextCompat.getDrawable(this, R.drawable.ic_arrow_back_24)
-        }
-        toolbar.navigationIcon?.setTint(getColorCompat(R.color.icon_active))
+        toolbar.navigationIcon?.setTint(ContextCompat.getColor(this, R.color.text_primary_dark))
         toolbar.setNavigationOnClickListener { onBackPressedDispatcher.onBackPressed() }
 
-        val switch = findViewById<SwitchMaterial>(R.id.switchTheme)
+        val switch = findViewById<MaterialSwitch>(R.id.switchTheme)
         switch.isChecked = prefs.getBoolean(KEY_DARK_THEME, false)
         switch.setOnCheckedChangeListener { _, checked ->
             AppCompatDelegate.setDefaultNightMode(
@@ -44,14 +37,8 @@ class SettingsActivity : AppCompatActivity() {
             prefs.edit().putBoolean(KEY_DARK_THEME, checked).apply()
         }
 
-        val shareRow = findViewById<View>(R.id.rowShare)
-        val shareIcon = findViewById<ImageView>(R.id.iconShare)
-        shareIcon.setColorFilter(getColorCompat(R.color.icon_inactive))
-        shareRow.setOnClickListener {
-            isShareActive = !isShareActive
-            shareIcon.setColorFilter(
-                getColorCompat(if (isShareActive) R.color.icon_active else R.color.icon_inactive)
-            )
+        val shareButton = findViewById<MaterialButton>(R.id.buttonShare)
+        shareButton.setOnClickListener {
             val intent = Intent(Intent.ACTION_SEND).apply {
                 type = "text/plain"
                 putExtra(Intent.EXTRA_TEXT, getString(R.string.share_text))
@@ -59,14 +46,8 @@ class SettingsActivity : AppCompatActivity() {
             startActivity(Intent.createChooser(intent, null))
         }
 
-        val supportRow = findViewById<View>(R.id.rowSupport)
-        val supportIcon = findViewById<ImageView>(R.id.iconSupport)
-        supportIcon.setColorFilter(getColorCompat(R.color.icon_inactive))
-        supportRow.setOnClickListener {
-            isSupportActive = !isSupportActive
-            supportIcon.setColorFilter(
-                getColorCompat(if (isSupportActive) R.color.icon_active else R.color.icon_inactive)
-            )
+        val supportButton = findViewById<MaterialButton>(R.id.buttonSupport)
+        supportButton.setOnClickListener {
             val intent = Intent(
                 Intent.ACTION_SENDTO,
                 Uri.parse("mailto:${getString(R.string.support_email)}")
@@ -74,14 +55,8 @@ class SettingsActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        val termsRow = findViewById<View>(R.id.rowTerms)
-        val termsIcon = findViewById<ImageView>(R.id.iconTerms)
-        termsIcon.setColorFilter(getColorCompat(R.color.icon_inactive))
-        termsRow.setOnClickListener {
-            isTermsActive = !isTermsActive
-            termsIcon.setColorFilter(
-                getColorCompat(if (isTermsActive) R.color.icon_active else R.color.icon_inactive)
-            )
+        val termsButton = findViewById<MaterialButton>(R.id.buttonTerms)
+        termsButton.setOnClickListener {
             startActivity(Intent(this, TermsActivity::class.java))
         }
     }
@@ -91,7 +66,4 @@ class SettingsActivity : AppCompatActivity() {
         const val KEY_DARK_THEME = "night"
     }
 
-    private fun getColorCompat(colorRes: Int): Int {
-        return ContextCompat.getColor(this, colorRes)
-    }
 }

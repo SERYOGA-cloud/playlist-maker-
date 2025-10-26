@@ -1,47 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Экран -->
-    <dimen name="screen_width">360dp</dimen>
+    <!-- Screen paddings -->
     <dimen name="screen_padding_h">16dp</dimen>
     <dimen name="screen_padding_top">16dp</dimen>
     <dimen name="screen_padding_bottom">16dp</dimen>
-    <dimen name="padding_screen">16dp</dimen>
-    <dimen name="screen_padding">16dp</dimen>
 
-    <!-- Шапка -->
+    <!-- Toolbar -->
     <dimen name="toolbar_height">56dp</dimen>
     <dimen name="header_height">56dp</dimen>
 
-    <!-- Карточки -->
-    <dimen name="card_min_height">220dp</dimen>
-    <dimen name="card_height">220dp</dimen>
-    <dimen name="card_width">328dp</dimen>
-    <dimen name="card_radius">16dp</dimen>
-    <dimen name="card_corner">16dp</dimen>
-    <dimen name="card_gap_v">16dp</dimen>
-    <dimen name="card_margin_top">16dp</dimen>
-    <dimen name="card_padding_h">16dp</dimen>
-    <dimen name="card_padding_v">16dp</dimen>
-    <dimen name="card_padding">16dp</dimen>
-    <dimen name="card_content_spacing">16dp</dimen>
+    <!-- Main screen buttons -->
+    <dimen name="main_buttons_top_offset">80dp</dimen>
+    <dimen name="main_button_min_height">220dp</dimen>
+    <dimen name="main_button_corner_radius">16dp</dimen>
+    <dimen name="main_button_spacing_vertical">16dp</dimen>
+    <dimen name="main_button_content_padding">16dp</dimen>
+    <dimen name="main_button_icon_padding">12dp</dimen>
+    <dimen name="main_button_icon_size">24dp</dimen>
 
-    <!-- Контент карточки -->
-    <dimen name="card_icon_size">24dp</dimen>
-    <dimen name="card_icon_text_gap">12dp</dimen>
-    <dimen name="card_title_size">16sp</dimen>
-    <dimen name="card_text_size">16sp</dimen>
+    <!-- Typography -->
+    <dimen name="main_button_text_size">16sp</dimen>
 
-    <!-- Общие размеры -->
-    <dimen name="settings_row_height">61dp</dimen>
-    <dimen name="settings_row_padding">20dp</dimen>
-    <dimen name="settings_icon_container">40dp</dimen>
-    <dimen name="settings_icon_padding">8dp</dimen>
-    <dimen name="settings_icon_margin_end">16dp</dimen>
-    <dimen name="settings_divider_inset">76dp</dimen>
-    <dimen name="settings_list_margin_top">24dp</dimen>
-    <dimen name="settings_icon_corner">12dp</dimen>
+    <!-- Settings -->
+    <dimen name="settings_content_padding_horizontal">16dp</dimen>
+    <dimen name="settings_content_padding_top">32dp</dimen>
+    <dimen name="settings_group_spacing">24dp</dimen>
+    <dimen name="settings_item_padding_vertical">12dp</dimen>
+    <dimen name="settings_item_spacing_vertical">16dp</dimen>
+    <dimen name="settings_item_icon_padding">12dp</dimen>
+    <dimen name="settings_item_icon_size">24dp</dimen>
+    <dimen name="settings_switch_margin_start">12dp</dimen>
+
+    <!-- Shared paddings and typography -->
+    <dimen name="padding_screen">16dp</dimen>
     <dimen name="header_text_size">24sp</dimen>
-    <dimen name="row_text_size">16sp</dimen>
-    <dimen name="terms_text_size">16sp</dimen>
     <dimen name="terms_padding">16dp</dimen>
+    <dimen name="terms_text_size">16sp</dimen>
 </resources>
